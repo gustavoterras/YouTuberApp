@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 
 public class RecyclerBindingAdapter<T> extends RecyclerView.Adapter<RecyclerBindingAdapter.BindingHolder> {
 
+    private int lastPosition = 1;
     private int holderLayout, variableId;
     private AbstractList<T> items = new ArrayList<>();
     private OnItemClickListener<T> onItemClickListener;
@@ -58,6 +61,13 @@ public class RecyclerBindingAdapter<T> extends RecyclerView.Adapter<RecyclerBind
 
         holder.getBinding().setVariable(variableId, item);
         holder.getBinding().executePendingBindings();
+
+        if (position > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
+            holder.itemView.startAnimation(animation);
+        }
+
+        lastPosition = position;
     }
 
     @Override

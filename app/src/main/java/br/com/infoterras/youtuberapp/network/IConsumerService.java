@@ -1,5 +1,7 @@
 package br.com.infoterras.youtuberapp.network;
 
+import com.google.gson.JsonObject;
+
 import br.com.infoterras.youtuberapp.model.YouTubeResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,6 +18,6 @@ public interface IConsumerService {
     Call<YouTubeResponse> getContent(@Url String url);
 
     @GET()
-    Call<YouTubeResponse> getComment(@Url String url);
+    Call<JsonObject> getComment(@Url String url);
 
 }

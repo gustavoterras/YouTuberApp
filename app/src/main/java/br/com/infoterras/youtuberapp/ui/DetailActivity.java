@@ -32,7 +32,7 @@ public class DetailActivity extends YouTubeBaseActivity implements YouTubePlayer
         youTubeItem = (YouTubeItem) getIntent().getSerializableExtra("extra");
 
         ActivityDetailBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
-        binding.setViewModel(new DetailViewModel(this, youTubeItem));
+        binding.setViewModel(new DetailViewModel(this, findViewById(android.R.id.content), youTubeItem));
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.player);
         youTubeView.initialize(BuildConfig.KEY, this);

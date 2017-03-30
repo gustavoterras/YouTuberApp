@@ -39,7 +39,7 @@ public class ContentViewModel implements ConsumerService.OnTaskCompleted<YouTube
 
         ConsumerService consumerService = new ConsumerService();
         consumerService.setOnTaskCompleted(this);
-        consumerService.getUContent(context.getString(R.string.channel_id), -1);
+        consumerService.getContent(context.getString(R.string.channel_id), -1);
 
         initRecycler();
     }
@@ -56,7 +56,6 @@ public class ContentViewModel implements ConsumerService.OnTaskCompleted<YouTube
     private RecyclerBindingAdapter<YouTubeItem> getAdapter() {
         return new RecyclerBindingAdapter<>(R.layout.item_content_list, BR.viewModel, new ArrayList<YouTubeItem>());
     }
-
 
     @Override
     public void onSuccess(YouTubeResponse response, int code, int requestCode) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,135 +12,150 @@
             type="DetailViewModel" />
     </data>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="false"
-        android:orientation="vertical"
-        tools:context="br.com.infoterras.youtuberapp.ui.DetailActivity">
-
-        <com.google.android.youtube.player.YouTubePlayerView
-            android:id="@+id/player"
-            android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:transitionName="video" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            android:orientation="vertical"
+            tools:context="br.com.infoterras.youtuberapp.ui.DetailActivity">
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:transitionName="video" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_default"
-                    android:layout_marginRight="@dimen/margin_default"
-                    android:text="@{viewModel.youTubeItem.snippet.title}" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorGrayDivider" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/padding_default"
-                android:paddingRight="@dimen/padding_default">
-
-                <RelativeLayout
-                    android:background="?attr/selectableItemBackground"
-                    android:onClick="@{viewModel.youTubeItem::doLike}"
-                    android:layout_width="0dp"
+                    android:layout_height="50dp"
                     android:gravity="center"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_button"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="@dimen/padding_default"
-                        android:paddingRight="@dimen/padding_default">
+                        android:layout_marginLeft="@dimen/margin_default"
+                        android:layout_marginRight="@dimen/margin_default"
+                        android:text="@{viewModel.youTubeItem.snippet.title}" />
 
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_like"
-                            android:tint="@color/colorWhite" />
+                </LinearLayout>
 
-                        <TextView
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrayDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_default"
+                    android:paddingRight="@dimen/padding_default">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:onClick="@{viewModel.youTubeItem::doLike}">
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="@dimen/padding_xsmall"
-                            android:text="@string/like"
-                            android:textColor="@color/colorWhite" />
+                            android:background="@drawable/shape_button"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/padding_default"
+                            android:paddingRight="@dimen/padding_default">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_like"
+                                android:tint="@color/colorWhite" />
 
-                </RelativeLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_xsmall"
+                                android:text="@string/like"
+                                android:textColor="@color/colorWhite" />
 
-                <ImageView
-                    android:background="?attr/selectableItemBackground"
-                    android:onClick="@{viewModel.youTubeItem::doComment}"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="center"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_dialog"
-                    android:tint="@color/colorGray" />
+                        </LinearLayout>
 
-                <ImageView
-                    android:background="?attr/selectableItemBackground"
-                    android:onClick="@{viewModel.youTubeItem::doShare}"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="center"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_share"
-                    android:tint="@color/colorGray" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@null"
+                        android:onClick="@{viewModel.youTubeItem::doComment}"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_dialog"
+                        android:tint="@color/colorGray" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@null"
+                        android:onClick="@{viewModel.youTubeItem::doShare}"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_share"
+                        android:tint="@color/colorGray" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrayDivider" />
 
             </LinearLayout>
 
-            <View
+            <LinearLayout
+                android:id="@+id/comments_layout"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorGrayDivider" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:minHeight="200dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrayDivider" />
+
+                <include
+                    android:id="@+id/progress_layout"
+                    layout="@layout/item_progress" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    app:configuration="@{viewModel.recyclerConfiguration}" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/comments_layout"
-            android:background="@color/colorWhite"
-            android:layout_marginTop="@dimen/margin_default"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorGrayDivider" />
-
-                <include layout="@layout/item_progress" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </layout>
