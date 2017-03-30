@@ -15,4 +15,7 @@ public interface IConsumerService {
     @GET()
     Call<YouTubeResponse> getContent(@Url String url);
 
+    @GET()
+    Call<YouTubeResponse> getComment(@Url String url);
+
 }

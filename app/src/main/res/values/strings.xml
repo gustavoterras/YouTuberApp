@@ -3,5 +3,6 @@
 
     <string name="channel_id">UCHZSi8xsLHDor_FQjhgwMoA</string>
     <string name="like">Like</string>
+    <string name="loading">Aguarde, carregando...</string>
 
 </resources>

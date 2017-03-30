@@ -55,16 +55,16 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingBottom="@dimen/padding_small"
                 android:paddingLeft="@dimen/padding_default"
-                android:paddingRight="@dimen/padding_default"
-                android:paddingTop="@dimen/padding_small">
+                android:paddingRight="@dimen/padding_default">
 
                 <RelativeLayout
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="@{viewModel.youTubeItem::doLike}"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="@{viewModel.youTubeItem::doLike}">
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -93,24 +93,50 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="@null"
+                    android:background="?attr/selectableItemBackground"
                     android:onClick="@{viewModel.youTubeItem::doComment}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:contentDescription="@null"
                     android:src="@drawable/ic_dialog"
                     android:tint="@color/colorGray" />
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="@null"
+                    android:background="?attr/selectableItemBackground"
                     android:onClick="@{viewModel.youTubeItem::doShare}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:contentDescription="@null"
                     android:src="@drawable/ic_share"
                     android:tint="@color/colorGray" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrayDivider" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comments_layout"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="@dimen/margin_default"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrayDivider" />
+
+                <include layout="@layout/item_progress" />
 
         </LinearLayout>
 

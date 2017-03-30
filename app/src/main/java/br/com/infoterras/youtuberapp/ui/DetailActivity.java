@@ -3,6 +3,9 @@ package br.com.infoterras.youtuberapp.ui;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.view.Gravity;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -34,6 +37,12 @@ public class DetailActivity extends YouTubeBaseActivity implements YouTubePlayer
         youTubeView = (YouTubePlayerView) findViewById(R.id.player);
         youTubeView.initialize(BuildConfig.KEY, this);
 
+
+        Slide slide = new Slide(Gravity.BOTTOM);
+        slide.addTarget(R.id.comments_layout);
+        slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in));
+        slide.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+        getWindow().setEnterTransition(slide);
     }
 
     @Override

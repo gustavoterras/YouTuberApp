@@ -7,6 +7,8 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.util.Log;
 import android.view.View;
 
@@ -40,4 +42,6 @@ public class DetailViewModel {
         //consumerService.setOnTaskCompleted(this);
         //consumerService.getUContent(context.getString(R.string.channel_id), -1);
     }
+
+
 }
