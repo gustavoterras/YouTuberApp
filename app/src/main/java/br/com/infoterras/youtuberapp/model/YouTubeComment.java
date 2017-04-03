@@ -76,7 +76,7 @@ public class YouTubeComment implements Serializable{
     }
 
     public String getPublishedFormated(){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yy", Locale.getDefault());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy", Locale.getDefault());
         return simpleDateFormat.format(publishedAt);
     }
 }

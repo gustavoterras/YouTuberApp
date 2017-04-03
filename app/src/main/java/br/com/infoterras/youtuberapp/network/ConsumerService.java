@@ -36,7 +36,7 @@ public class ConsumerService {
     }
 
     public void getContent(String channelId, final int requestCode) {
-        String url = String.format(Locale.getDefault(), "/youtube/v3/search?key=%s&channelId=%s&part=snippet,id&order=date&maxResults=20", BuildConfig.KEY, channelId);
+        String url = String.format(Locale.getDefault(), "/youtube/v3/search?key=%s&channelId=%s&part=snippet,id&order=date&maxResults=50", BuildConfig.KEY, channelId);
         service.getContent(url).enqueue(new Callback<YouTubeResponse>() {
             @Override
             public void onResponse(Call<YouTubeResponse> call, Response<YouTubeResponse> response) {
@@ -51,8 +51,23 @@ public class ConsumerService {
     }
 
     public void getComment(String videoId, final int requestCode) {
-        String url = String.format(Locale.getDefault(), "/youtube/v3/commentThreads?key=%s&textFormat=plainText&part=snippet&videoId=%s&order=time&maxResults=50", BuildConfig.KEY, videoId);
+        String url = String.format(Locale.getDefault(), "/youtube/v3/commentThreads?key=%s&textFormat=plainText&part=snippet&videoId=%s&order=time&maxResults=100", BuildConfig.KEY, videoId);
         service.getComment(url).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                listener.onSuccess(response.body(), response.code(), requestCode);
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable throwable) {
+                listener.onFailure(throwable, requestCode);
+            }
+        });
+    }
+
+    public void getVideoDetail(String videoId, final int requestCode) {
+        String url = String.format(Locale.getDefault(), "/youtube/v3/videos?part=statistics&id=%s&key=%s", videoId, BuildConfig.KEY);
+        service.getVideoDetail(url).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 listener.onSuccess(response.body(), response.code(), requestCode);

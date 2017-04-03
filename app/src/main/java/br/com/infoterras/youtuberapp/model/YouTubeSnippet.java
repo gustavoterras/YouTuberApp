@@ -1,7 +1,9 @@
 package br.com.infoterras.youtuberapp.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by gustavoterras on 26/03/17.
@@ -44,5 +46,10 @@ public class YouTubeSnippet implements Serializable {
 
     public void setThumbnails(YouTubeThumb thumbnails) {
         this.thumbnails = thumbnails;
+    }
+
+    public String getPublishedFormated(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
+        return simpleDateFormat.format(publishedAt);
     }
 }

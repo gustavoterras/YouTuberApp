@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ApplicationTools"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,6 +21,9 @@
         </activity>
         <activity android:name=".ui.DetailActivity"
             android:theme="@style/AppTheme.TranslucentStatusBar"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="e1ab2c7016bc2d7eed0ec667ef9c572eab1dbbde" />
     </application>
 
 </manifest>

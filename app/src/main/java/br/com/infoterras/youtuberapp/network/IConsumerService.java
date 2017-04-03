@@ -20,4 +20,7 @@ public interface IConsumerService {
     @GET()
     Call<JsonObject> getComment(@Url String url);
 
+    @GET()
+    Call<JsonObject> getVideoDetail(@Url String url);
+
 }

@@ -18,8 +18,8 @@
         android:padding="@dimen/padding_default">
 
         <FrameLayout
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
             android:layout_gravity="center"
             android:background="@drawable/shape_circle">
 

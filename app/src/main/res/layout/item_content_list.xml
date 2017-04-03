@@ -37,16 +37,23 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_default">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_default"
-                        android:layout_marginRight="@dimen/margin_default"
-                        android:text="@{viewModel.snippet.title}" />
+                        android:layout_weight="1"
+                        android:text="@{viewModel.snippet.title}"
+                        android:textSize="@dimen/text_size_default" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.snippet.getPublishedFormated()}"
+                        android:textColor="@color/colorGrayLight"
+                        android:textSize="@dimen/text_size_small" />
 
                 </LinearLayout>
 
@@ -64,17 +71,18 @@
                     android:paddingRight="@dimen/padding_default">
 
                     <RelativeLayout
-                        android:background="?attr/selectableItemBackground"
-                        android:onClick="@{viewModel::doLike}"
                         android:layout_width="0dp"
-                        android:gravity="center"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:onClick="@{viewModel::doLike}">
 
                         <LinearLayout
+                            android:id="@+id/action_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/shape_button"
+                            android:background="@drawable/shape_button_disable"
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/padding_default"
                             android:paddingRight="@dimen/padding_default">
@@ -98,24 +106,24 @@
                     </RelativeLayout>
 
                     <ImageView
-                        android:background="?attr/selectableItemBackground"
-                        android:onClick="@{viewModel::doComment}"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:scaleType="center"
+                        android:background="?attr/selectableItemBackground"
                         android:contentDescription="@null"
+                        android:onClick="@{viewModel::doComment}"
+                        android:scaleType="center"
                         android:src="@drawable/ic_dialog"
                         android:tint="@color/colorGray" />
 
                     <ImageView
-                        android:background="?attr/selectableItemBackground"
-                        android:onClick="@{viewModel::doShare}"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:scaleType="center"
+                        android:background="?attr/selectableItemBackground"
                         android:contentDescription="@null"
+                        android:onClick="@{viewModel::doShare}"
+                        android:scaleType="center"
                         android:src="@drawable/ic_share"
                         android:tint="@color/colorGray" />
 

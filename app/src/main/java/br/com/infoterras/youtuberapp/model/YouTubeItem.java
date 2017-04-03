@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 
+import br.com.infoterras.youtuberapp.R;
 import br.com.infoterras.youtuberapp.util.Constants;
 
 /**
@@ -36,6 +37,16 @@ public class YouTubeItem implements Serializable {
     }
 
     public void doLike(View view){
+
+        View actionButton = view.findViewById(R.id.action_button);
+
+        if(actionButton.isEnabled())
+            actionButton.setBackgroundResource(R.drawable.shape_button_enable);
+        else
+            actionButton.setBackgroundResource(R.drawable.shape_button_disable);
+
+        actionButton.setEnabled(!actionButton.isEnabled());
+
         Toast.makeText(view.getContext(), "like", Toast.LENGTH_SHORT).show();
     }
 
