@@ -13,6 +13,8 @@
 
 ### Imagens do Projeto
 
+> Listagem dos videos do canal
 <img src="https://github.com/gustavoterras/YouTuberApp/blob/master/images/img1.png" width="300">
 
+> Detalhes do video selecionado
 <img src="https://github.com/gustavoterras/YouTuberApp/blob/master/images/img2.png" width="300">
