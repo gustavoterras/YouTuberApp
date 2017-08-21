@@ -1,4 +1,4 @@
-package br.com.infoterras.youtuberapp.util;
+package br.com.infoterras.youtuberapp.utils;
 
 /**
  * Created by gustavoterras on 28/03/17.

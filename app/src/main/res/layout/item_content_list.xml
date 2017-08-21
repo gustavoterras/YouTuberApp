@@ -11,31 +11,34 @@
             type="YouTubeItem" />
     </data>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_default"
-        android:elevation="@dimen/cardview_default_elevation">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:animateLayoutChanges="true">
 
             <br.com.infoterras.youtuberapp.component.GlideImageView
                 android:id="@+id/img_video"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:scaleType="fitXY"
                 android:contentDescription="@null"
                 app:src="@{viewModel.snippet.thumbnails.thumbMedium.url}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrayDivider" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -49,6 +52,7 @@
                         android:textSize="@dimen/text_size_default" />
 
                     <TextView
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{viewModel.snippet.getPublishedFormated()}"
@@ -71,18 +75,20 @@
                     android:paddingRight="@dimen/padding_default">
 
                     <RelativeLayout
+                        android:id="@+id/content_layout_action"
+                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="center"
-                        android:onClick="@{viewModel::doLike}">
+                        android:onClick="@{viewModel::doUnLike}">
 
                         <LinearLayout
                             android:id="@+id/action_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/shape_button_disable"
+                            android:background="@drawable/shape_button"
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/padding_default"
                             android:paddingRight="@dimen/padding_default">
@@ -104,6 +110,18 @@
                         </LinearLayout>
 
                     </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/action_button_like"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@null"
+                        android:onClick="@{viewModel::doLike}"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_like"
+                        android:tint="@color/colorGray" />
 
                     <ImageView
                         android:layout_width="0dp"
@@ -129,10 +147,13 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrayDivider" />
+
             </LinearLayout>
 
         </LinearLayout>
-
-    </android.support.v7.widget.CardView>
 
 </layout>

@@ -1,5 +1,8 @@
 package br.com.infoterras.youtuberapp.model;
 
+import android.text.Html;
+import android.text.Spanned;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -48,8 +51,8 @@ public class YouTubeSnippet implements Serializable {
         this.thumbnails = thumbnails;
     }
 
-    public String getPublishedFormated(){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
-        return simpleDateFormat.format(publishedAt);
+    public Spanned getPublishedFormated(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("'<big>'dd'</big><br><small>'MMM'</small'", Locale.getDefault());
+        return Html.fromHtml(simpleDateFormat.format(publishedAt).toUpperCase());
     }
 }
