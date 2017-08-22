@@ -25,12 +25,15 @@
       0% —  00
   -->
 
+    <color name="color_window_background">#FFF3F3F3</color>
+
     <color name="colorTransparent">#00000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrayDivider">#ededed</color>
     <color name="colorGray">#c3c3c3</color>
     <color name="colorGrayLight">#d1d1d1</color>
 
+    <color name="scrim">#99323232</color>
 
     <color name="colorPrimary">#E91E63</color>
     <color name="colorPrimaryDark">#E91E63</color>

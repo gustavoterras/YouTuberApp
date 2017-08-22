@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import br.com.infoterras.youtuberapp.BR;
 import br.com.infoterras.youtuberapp.R;
 import br.com.infoterras.youtuberapp.adapter.RecyclerBindingAdapter;
-import br.com.infoterras.youtuberapp.component.RecyclerConfiguration;
+import br.com.infoterras.youtuberapp.model.Recycler;
 import br.com.infoterras.youtuberapp.model.YouTubeItem;
 import br.com.infoterras.youtuberapp.model.YouTubeResponse;
 import br.com.infoterras.youtuberapp.network.ConsumerService;
@@ -30,12 +30,12 @@ public class ContentViewModel implements ConsumerService.OnTaskCompleted<YouTube
 
     private static final String TAG = ContentViewModel.class.getSimpleName();
     private RecyclerBindingAdapter<YouTubeItem> adapter;
-    public RecyclerConfiguration recyclerConfiguration;
+    public Recycler recycler;
     private Context context;
 
     public ContentViewModel(final Context context) {
         this.context = context;
-        this.recyclerConfiguration = new RecyclerConfiguration();
+        this.recycler = new Recycler();
 
         ConsumerService consumerService = new ConsumerService();
         consumerService.setOnTaskCompleted(this);
@@ -48,9 +48,9 @@ public class ContentViewModel implements ConsumerService.OnTaskCompleted<YouTube
         adapter = getAdapter();
         adapter.setOnItemClickListener(this);
 
-        recyclerConfiguration.setLayoutManager(new LinearLayoutManager(context));
-        recyclerConfiguration.setItemAnimator(new DefaultItemAnimator());
-        recyclerConfiguration.setAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(context));
+        recycler.setItemAnimator(new DefaultItemAnimator());
+        recycler.setAdapter(adapter);
     }
 
     private RecyclerBindingAdapter<YouTubeItem> getAdapter() {

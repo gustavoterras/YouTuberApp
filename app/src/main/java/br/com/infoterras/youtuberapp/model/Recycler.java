@@ -1,8 +1,7 @@
-package br.com.infoterras.youtuberapp.component;
+package br.com.infoterras.youtuberapp.model;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
 
 import br.com.infoterras.youtuberapp.BR;
@@ -11,7 +10,7 @@ import br.com.infoterras.youtuberapp.BR;
  * Created by Gustavo on 26/03/2017.
  */
 
-public class RecyclerConfiguration extends BaseObservable {
+public class Recycler extends BaseObservable {
 
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.ItemAnimator itemAnimator;
@@ -28,7 +27,7 @@ public class RecyclerConfiguration extends BaseObservable {
     }
 
     @Bindable
-    private RecyclerView.ItemAnimator getItemAnimator() {
+    public RecyclerView.ItemAnimator getItemAnimator() {
         return itemAnimator;
     }
 
@@ -45,12 +44,5 @@ public class RecyclerConfiguration extends BaseObservable {
     public void setAdapter(RecyclerView.Adapter adapter) {
         this.adapter = adapter;
         notifyPropertyChanged(BR.adapter);
-    }
-
-    @BindingAdapter("app:configuration")
-    public static void configureRecyclerView(RecyclerView recyclerView, RecyclerConfiguration configuration) {
-        recyclerView.setLayoutManager(configuration.getLayoutManager());
-        recyclerView.setItemAnimator(configuration.getItemAnimator());
-        recyclerView.setAdapter(configuration.getAdapter());
     }
 }

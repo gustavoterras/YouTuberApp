@@ -19,7 +19,7 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:configuration="@{viewModel.recyclerConfiguration}"/>
+            app:configuration="@{viewModel.recycler}"/>
 
     </android.support.design.widget.CoordinatorLayout>
 

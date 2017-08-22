@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import br.com.infoterras.youtuberapp.BR;
 import br.com.infoterras.youtuberapp.R;
 import br.com.infoterras.youtuberapp.adapter.RecyclerBindingAdapter;
-import br.com.infoterras.youtuberapp.component.RecyclerConfiguration;
+import br.com.infoterras.youtuberapp.model.Recycler;
 import br.com.infoterras.youtuberapp.model.YouTubeComment;
 import br.com.infoterras.youtuberapp.model.YouTubeItem;
 import br.com.infoterras.youtuberapp.model.YouTubeStatistics;
@@ -30,7 +30,7 @@ public class DetailViewModel implements ConsumerService.OnTaskCompleted<JsonObje
 
     private static final String TAG = DetailViewModel.class.getSimpleName();
     private RecyclerBindingAdapter<YouTubeComment> adapter;
-    public RecyclerConfiguration recyclerConfiguration;
+    public Recycler recycler;
     public YouTubeStatistics statistics;
     public YouTubeItem youTubeItem;
     private LinearLayout progress;
@@ -38,7 +38,7 @@ public class DetailViewModel implements ConsumerService.OnTaskCompleted<JsonObje
 
     public DetailViewModel(final Context context, View view, YouTubeItem youTubeItem) {
         this.progress = (LinearLayout) view.findViewById(R.id.progress_layout);
-        this.recyclerConfiguration = new RecyclerConfiguration();
+        this.recycler = new Recycler();
         this.statistics = new YouTubeStatistics();
         this.youTubeItem = youTubeItem;
         this.context = context;
@@ -55,9 +55,9 @@ public class DetailViewModel implements ConsumerService.OnTaskCompleted<JsonObje
         adapter = getAdapter();
         adapter.setOnItemClickListener(this);
 
-        recyclerConfiguration.setLayoutManager(new LinearLayoutManager(context));
-        recyclerConfiguration.setItemAnimator(new DefaultItemAnimator());
-        recyclerConfiguration.setAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(context));
+        recycler.setItemAnimator(new DefaultItemAnimator());
+        recycler.setAdapter(adapter);
     }
 
     private RecyclerBindingAdapter<YouTubeComment> getAdapter() {

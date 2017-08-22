@@ -16,10 +16,9 @@
         android:id="@+id/draggable_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="false"
-        app:dragDismissDistance="112dp"
-        app:dragDismissScale="0.95"
-        android:animateLayoutChanges="true"
+        android:background="@color/color_window_background"
+        app:dragDismissDistance="190dp"
+        app:dragDismissScale="0.90"
         tools:context="br.com.infoterras.youtuberapp.ui.DetailActivity">
 
         <android.support.v4.widget.NestedScrollView
@@ -29,38 +28,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:elevation="2dp"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.google.android.youtube.player.YouTubePlayerView
-                        android:id="@+id/player"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:transitionName="video"
-                        android:visibility="gone" />
-
-                    <br.com.infoterras.youtuberapp.component.GlideImageView
+                    <ImageView
                         android:id="@+id/img_video"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="220dp"
                         android:contentDescription="@null"
-                        android:transitionName="video"
                         android:scaleType="fitXY"
+                        android:transitionName="video"
                         app:src="@{viewModel.youTubeItem.snippet.thumbnails.thumbMedium.url}" />
 
                     <ImageView
                         android:id="@+id/btn_action_play"
-                        android:layout_centerInParent="true"
-                        android:src="@android:drawable/sym_def_app_icon"
+                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@null" />
+                        android:contentDescription="@null"
+                        android:tint="@color/colorPrimary"
+                        android:src="@drawable/ic_play" />
 
-                </RelativeLayout>
+                    <com.google.android.youtube.player.YouTubePlayerView
+                        android:id="@+id/player"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:transitionName="video"
+                        android:visibility="gone" />
+
+                </FrameLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_actions"
@@ -101,6 +100,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -114,6 +114,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.2"
+                                android:animateLayoutChanges="true"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 tools:ignore="UseCompoundDrawables">
@@ -137,6 +138,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.2"
+                                android:animateLayoutChanges="true"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 tools:ignore="UseCompoundDrawables">
@@ -225,7 +227,8 @@
                             android:onClick="@{viewModel.youTubeItem::doLike}"
                             android:scaleType="center"
                             android:src="@drawable/ic_like"
-                            android:tint="@color/colorGray" />
+                            android:tint="@color/colorGray"
+                            app:animation="@{@anim/fade_in_enter_from_left}" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -236,7 +239,8 @@
                             android:onClick="@{viewModel.youTubeItem::doComment}"
                             android:scaleType="center"
                             android:src="@drawable/ic_dialog"
-                            android:tint="@color/colorGray" />
+                            android:tint="@color/colorGray"
+                            app:animation="@{@anim/fade_in_enter_from_left}" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -247,7 +251,8 @@
                             android:onClick="@{viewModel.youTubeItem::doShare}"
                             android:scaleType="center"
                             android:src="@drawable/ic_share"
-                            android:tint="@color/colorGray" />
+                            android:tint="@color/colorGray"
+                            app:animation="@{@anim/fade_in_enter_from_left}" />
 
                     </LinearLayout>
 
@@ -256,11 +261,10 @@
                 <LinearLayout
                     android:id="@+id/layout_comments"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_default"
-                    android:background="@color/colorWhite"
+                    android:animateLayoutChanges="true"
                     android:elevation="2dp"
-                    android:minHeight="200dp"
                     android:orientation="vertical">
 
                     <include
@@ -268,10 +272,11 @@
                         layout="@layout/item_progress" />
 
                     <android.support.v7.widget.RecyclerView
+                        android:background="@color/colorWhite"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:nestedScrollingEnabled="false"
-                        app:configuration="@{viewModel.recyclerConfiguration}" />
+                        app:configuration="@{viewModel.recycler}" />
 
                 </LinearLayout>
 

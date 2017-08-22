@@ -12,6 +12,7 @@
     </data>
 
         <LinearLayout
+            android:elevation="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -19,18 +20,13 @@
             android:layout_marginBottom="@dimen/margin_default"
             android:animateLayoutChanges="true">
 
-            <br.com.infoterras.youtuberapp.component.GlideImageView
+            <ImageView
                 android:id="@+id/img_video"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="220dp"
                 android:scaleType="fitXY"
                 android:contentDescription="@null"
                 app:src="@{viewModel.snippet.thumbnails.thumbMedium.url}" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorGrayDivider" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,11 +142,6 @@
                         android:tint="@color/colorGray" />
 
                 </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colorGrayDivider" />
 
             </LinearLayout>
 

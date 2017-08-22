@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:background="@drawable/shape_circle">
 
-            <br.com.infoterras.youtuberapp.component.GlideImageView
+            <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"

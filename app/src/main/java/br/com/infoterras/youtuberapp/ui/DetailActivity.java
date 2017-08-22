@@ -39,12 +39,6 @@ public class DetailActivity extends YouTubeBaseActivity implements YouTubePlayer
         youTubeItem = (YouTubeItem) getIntent().getSerializableExtra("extra");
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
-
-        Slide slide = new Slide(Gravity.BOTTOM);
-        slide.addTarget(R.id.layout_comments);
-        slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in));
-        slide.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
-        getWindow().setEnterTransition(slide);
     }
 
     @Override
@@ -91,11 +85,7 @@ public class DetailActivity extends YouTubeBaseActivity implements YouTubePlayer
                 }
             });
 
-            youTubePlayer.setFullscreen(true);
-
             youTubePlayer.loadVideo(youTubeItem.getId().getVideoId());
-            //player.play();
-            //player.setFullscreen(true);
         }
     }
 
@@ -121,7 +111,7 @@ public class DetailActivity extends YouTubeBaseActivity implements YouTubePlayer
             youTubePlayer.setFullscreen(false);
             youTubePlayer.pause();
         } else{
-            super.onBackPressed();
+            finishAfterTransition();
         }
     }
 }
