@@ -35,8 +35,8 @@
 
     <color name="scrim">#99323232</color>
 
-    <color name="colorPrimary">#E91E63</color>
-    <color name="colorPrimaryDark">#E91E63</color>
+    <color name="colorPrimary">#F8BBD0</color>
+    <color name="colorPrimaryDark">#c48b9f</color>
     <color name="colorAccent">#FFFFFF</color>
 
 </resources>

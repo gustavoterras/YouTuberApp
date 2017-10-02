@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import br.com.infoterras.youtuberapp.component.CropCircleTransformation;
+import br.com.infoterras.youtuberapp.ui.widget.CropCircleTransformation;
 import br.com.infoterras.youtuberapp.model.Recycler;
 
 /**

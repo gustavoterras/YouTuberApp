@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="br.com.infoterras.youtuberapp.ui.LoginActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_layer_list" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="125dp"
+            android:orientation="vertical"
+            app:animation="@{@anim/fade_in_enter_from_left}" >
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_logo"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:elevation="5dp"/>
+
+            <TextView
+                android:layout_gravity="bottom"
+                android:textColor="@android:color/black"
+                android:paddingRight="@dimen/padding_default"
+                android:paddingLeft="@dimen/padding_default"
+                android:text="ÁGATA TERRAS"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="serif-monospace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="@dimen/margin_xlarge"
+            android:background="@color/colorPrimary"
+            android:onClick="open"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"
+            android:padding="@dimen/padding_default"
+            android:text="Entrar"
+            app:animation="@{@anim/fade_in_enter_from_left}" />
+
+    </FrameLayout>
+
+</layout>

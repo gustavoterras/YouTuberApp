@@ -1,4 +1,4 @@
-package br.com.infoterras.youtuberapp.component;
+package br.com.infoterras.youtuberapp.ui.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
