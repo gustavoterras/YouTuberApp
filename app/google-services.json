@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "946226855971",
+    "firebase_url": "https://app-agataterras.firebaseio.com",
+    "project_id": "app-agataterras",
+    "storage_bucket": "app-agataterras.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946226855971:android:513c7bc92580e106",
+        "android_client_info": {
+          "package_name": "br.com.infoterras.agataterras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946226855971-rpgm6tdbaf1jjrur6hbi1r6l37l39f54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.infoterras.agataterras",
+            "certificate_hash": "f042a1030fb63f6f4888e2e63bf45e97129101f1"
+          }
+        },
+        {
+          "client_id": "946226855971-uc9l6vimg0d45ndojfoi7c1p4bp5vto4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDFhP3grrEOodVNIzFDphKhnO6ugmx3_k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946226855971-uc9l6vimg0d45ndojfoi7c1p4bp5vto4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

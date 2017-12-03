@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="br.com.infoterras.youtuberapp.viewModel.ContentViewModel" />
+        <import type="br.com.infoterras.agataterras.viewModel.ContentViewModel" />
 
         <variable
             name="viewModel"

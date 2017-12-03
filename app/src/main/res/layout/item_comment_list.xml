@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="br.com.infoterras.youtuberapp.model.YouTubeComment" />
+        <import type="br.com.infoterras.agataterras.model.YouTubeComment" />
 
         <variable
             name="viewModel"

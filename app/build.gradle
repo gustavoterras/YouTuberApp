@@ -9,9 +9,9 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '27.0.1'
     defaultConfig {
-        applicationId "br.com.infoterras.youtuberapp"
+        applicationId "br.com.infoterras.agataterras"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -32,7 +32,7 @@ android {
 
         debug {
             buildConfigField STRING, HTTP_URL, "\"https://www.googleapis.com\""
-            buildConfigField STRING, KEY, "\"AIzaSyDit6lDpZjUOk4znxq7Vtlp9h3FjI26QCM\""
+            buildConfigField STRING, KEY, "\"AIzaSyDDFhP3grrEOodVNIzFDphKhnO6ugmx3_k\""
         }
 
         release {
@@ -40,7 +40,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             buildConfigField STRING, HTTP_URL, "\"https://www.googleapis.com\""
-            buildConfigField STRING, KEY, "\"AIzaSyDit6lDpZjUOk4znxq7Vtlp9h3FjI26QCM\""
+            buildConfigField STRING, KEY, "\"AIzaSyDDFhP3grrEOodVNIzFDphKhnO6ugmx3_k\""
         }
     }
 }
@@ -50,14 +50,21 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:design:25.4.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/YouTubeAndroidPlayerApi.jar')
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.7@aar') {
+
+    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.google.firebase:firebase-auth:11.6.2'
+    implementation 'com.google.android.gms:play-services-auth:11.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.6.7@aar') {
         transitive = true
     }
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -5,21 +5,21 @@
 
     <data>
 
-        <import type="br.com.infoterras.youtuberapp.viewModel.DetailViewModel" />
+        <import type="br.com.infoterras.agataterras.viewModel.DetailViewModel" />
 
         <variable
             name="viewModel"
             type="DetailViewModel" />
     </data>
 
-    <br.com.infoterras.youtuberapp.ui.widget.ElasticDragDismissFrameLayout
+    <br.com.infoterras.agataterras.ui.widget.ElasticDragDismissFrameLayout
         android:id="@+id/draggable_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_window_background"
-        app:dragDismissDistance="190dp"
-        app:dragDismissScale="0.90"
-        tools:context="br.com.infoterras.youtuberapp.ui.DetailActivity">
+        app:dragDismissDistance="112dp"
+        app:dragDismissScale="0.8"
+        tools:context="br.com.infoterras.agataterras.ui.DetailActivity">
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -187,7 +187,6 @@
                             android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:gravity="center"
-                            android:onClick="@{viewModel.youTubeItem::doUnLike}"
                             android:visibility="gone">
 
                             <LinearLayout
@@ -222,9 +221,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="@null"
-                            android:onClick="@{viewModel.youTubeItem::doLike}"
                             android:scaleType="center"
                             android:src="@drawable/ic_like"
                             android:tint="@color/colorGray"
@@ -234,9 +232,9 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="@null"
-                            android:onClick="@{viewModel.youTubeItem::doComment}"
+                            android:onClick="@{() -> viewModel.doComment()}"
                             android:scaleType="center"
                             android:src="@drawable/ic_dialog"
                             android:tint="@color/colorGray"
@@ -246,9 +244,9 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="@null"
-                            android:onClick="@{viewModel.youTubeItem::doShare}"
+                            android:onClick="@{() -> viewModel.doShare()}"
                             android:scaleType="center"
                             android:src="@drawable/ic_share"
                             android:tint="@color/colorGray"
@@ -284,6 +282,6 @@
 
         </android.support.v4.widget.NestedScrollView>
 
-    </br.com.infoterras.youtuberapp.ui.widget.ElasticDragDismissFrameLayout>
+    </br.com.infoterras.agataterras.ui.widget.ElasticDragDismissFrameLayout>
 
 </layout>
