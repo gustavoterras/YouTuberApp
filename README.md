@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/gustavoterras/YouTuberApp.svg?style=svg)](https://circleci.com/gh/gustavoterras/YouTuberApp)
+
 <a href="https://ktlint.github.io/"><img src="https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg" alt="ktlint"></a>
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c779f0ddedda4d669af2e74f0797f66a)](https://www.codacy.com/manual/gustavoterras/YouTuberApp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gustavoterras/YouTuberApp&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/bcc637d1-db30-4725-bfb7-c90fdadb8031)](https://codebeat.co/projects/github-com-gustavoterras-youtuberapp-master)
