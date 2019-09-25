@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c779f0ddedda4d669af2e74f0797f66a)](https://www.codacy.com/manual/gustavoterras/YouTuberApp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gustavoterras/YouTuberApp&amp;utm_campaign=Badge_Grade)
+
 # POC YouTuberApp
 
 ### Esta prova de conceito, está sendo desenvolvida para levantar todas as possíveis funcionálidades úteis para o desenvolvimento do aplicativo para a YouTuber [Ágata Terras](https://www.youtube.com/channel/UCHZSi8xsLHDor_FQjhgwMoA).
